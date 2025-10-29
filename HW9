@@ -1,0 +1,48 @@
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+const double PI = 3.1416;
+
+//a. distance function
+double distance (double x1, double y1, double x2, double y2) {
+    return sqrt(pow(x2 - x1, 2) + (y2 - y1, 2));
+}
+
+// b. radius function
+double radius(double xc, double yc, double xp, double yp) {
+    return distance(xc, yc, xp, yp);
+}
+
+// c. circumference function
+double circumference(double r) {
+    return 2 * PI * r;
+}
+
+// d. area function
+double area(double r) {
+    return PI * pow(r, 2);
+}
+
+int main() {
+    double xc, yc, xp, yp;
+
+    cout << "Enter center of circle (x y): ";
+    cin >> xc >> yc;
+    cout << "Enter a point on circle (x y): ";
+    cin >> xp >> yp;
+
+    double r = radius(xc, yc, xp, yp);
+    double d = 2 * r;
+    double c = circumference(r);
+    double a = area(r);
+
+    cout << "\nResults:\n";
+    cout << "Radius        : " << r << endl;
+    cout << "Diameter      : " << d << endl;
+    cout << "Circumference : " << c << endl;
+    cout << "Area          : " << a << endl;
+
+    return 0;
+}
